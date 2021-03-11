@@ -6,6 +6,11 @@
 
 protobuf 文件编译镜像
 
+### 1.0.0
+
+- protobuf: 3.15.5
+- golang: 1.14.15
+
 在 Makefile 中添加如下代码编译
 
 ```Makefile
