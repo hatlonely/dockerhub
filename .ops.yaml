@@ -13,7 +13,7 @@ task:
   protobuf:
     const:
       IMAGE_REPOSITORY: "protobuf"
-      IMAGE_TAG: "1.0.1"
+      IMAGE_TAG: "1.0.0"
     step:
       - docker build ${IMAGE_REPOSITORY} --tag=${REGISTRY_NAMESPACE}/${IMAGE_REPOSITORY}:${IMAGE_TAG}
       - docker login --username="${REGISTRY_USERNAME}" --password="${REGISTRY_PASSWORD}" "${REGISTRY_SERVER}"
