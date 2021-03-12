@@ -2,6 +2,27 @@
 
 一些通用镜像
 
+## 制作镜像
+
+```shell
+ops --variable ~/.ops/your_secret_file.json --env hatlonely -a run --task protobuf
+```
+
+~/.ops/your_secret_file.json
+
+```shell
+{
+    "registry": {
+        "hatlonely": {
+            "server": "registry.cn-beijing.aliyuncs.com",
+            "username": "xx",
+            "password": "xx",
+            "namespace": "xx"
+        }
+    }
+}
+```
+
 ## protobuf
 
 protobuf 文件编译镜像
