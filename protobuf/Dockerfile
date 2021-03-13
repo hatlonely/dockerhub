@@ -18,6 +18,13 @@ RUN go get -u \
     google.golang.org/grpc/cmd/protoc-gen-go-grpc \
     github.com/gogo/protobuf/protoc-gen-gofast
 
+# https://openapi-generator.tech/docs/generators/go
 RUN yum install -y java
 RUN wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/4.3.1/openapi-generator-cli-4.3.1.jar
 RUN wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.1/openapi-generator-cli-5.0.1.jar
+
+# https://goswagger.io/install.html
+RUN yum install -y curl
+RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && yum install -y jq
+RUN curl -o /usr/local/bin/swagger -L'#' "https://github.com/go-swagger/go-swagger/releases/download/v0.26.1/swagger_linux_amd64" && \
+    chmod +x /usr/local/bin/swagger
