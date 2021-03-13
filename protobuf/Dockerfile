@@ -11,6 +11,7 @@ ENV PATH="$PATH:/go/bin:/usr/local/go/bin"
 ENV GOPATH="/usr/local/go"
 ENV GOROOT="/go"
 
+# https://github.com/grpc-ecosystem/grpc-gateway
 RUN go get -u \
     github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway \
     github.com/grpc-ecosystem/grpc-gateway/protoc-gen-openapiv2 \
