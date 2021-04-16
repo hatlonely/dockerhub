@@ -4,10 +4,10 @@ dep:
 
 env:
   hatlonely:
-    REGISTRY_SERVER: "{{.registry.hatlonely.server}}"
-    REGISTRY_USERNAME: "{{.registry.hatlonely.username}}"
-    REGISTRY_PASSWORD: "{{.registry.hatlonely.password}}"
-    REGISTRY_NAMESPACE: "{{.registry.hatlonely.namespace}}"
+    REGISTRY_SERVER: "registry.cn-shanghai.aliyuncs.com"
+    REGISTRY_USERNAME: "{{.registry.aliyun.hatlonely.username}}"
+    REGISTRY_PASSWORD: "{{.registry.aliyun.hatlonely.password}}"
+    REGISTRY_NAMESPACE: "{{.registry.aliyun.hatlonely.namespace}}"
 
 task:
   protobuf:
