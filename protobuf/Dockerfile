@@ -20,7 +20,7 @@ RUN wget https://dl.google.com/go/go1.14.15.linux-amd64.tar.gz && \
 ENV PATH="$PATH:/go/bin:/usr/local/go/bin"
 ENV GOPATH="/usr/local/go"
 ENV GOROOT="/go"
-ENV GOPROXY="https://goproxy.io"
+ENV GOPROXY="https://goproxy.cn"
 
 # https://github.com/grpc-ecosystem/grpc-gateway
 RUN go get -u -v \
@@ -29,5 +29,13 @@ RUN go get -u -v \
     google.golang.org/protobuf/cmd/protoc-gen-go \
     google.golang.org/grpc/cmd/protoc-gen-go-grpc \
     github.com/gogo/protobuf/protoc-gen-gofast
+
+#RUN go get -u -v \
+#    github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway \
+#    github.com/grpc-ecosystem/grpc-gateway/protoc-gen-openapiv2 \
+#    github.com/golang/protobuf/protoc-gen-go \
+#    github.com/grpc/grpc-go/cmd/protoc-gen-go-grpc \
+#    github.com/gogo/protobuf/protoc-gen-gofast
+
 
 RUN go get -u github.com/srikrsna/protoc-gen-gotag
