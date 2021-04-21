@@ -17,10 +17,11 @@ RUN curl -o /usr/local/bin/swagger -L'#' "https://github.com/go-swagger/go-swagg
 RUN wget https://dl.google.com/go/go1.14.15.linux-amd64.tar.gz && \
     tar -xzvf go1.14.15.linux-amd64.tar.gz
 
+RUN wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.1.0/openapi-generator-cli-5.1.0.jar
+
 ENV PATH="$PATH:/go/bin:/usr/local/go/bin"
 ENV GOPATH="/usr/local/go"
 ENV GOROOT="/go"
-ENV GOPROXY="https://goproxy.cn"
 
 # https://github.com/grpc-ecosystem/grpc-gateway
 RUN go get -u -v \
@@ -30,4 +31,6 @@ RUN go get -u -v \
     google.golang.org/grpc/cmd/protoc-gen-go-grpc \
     github.com/gogo/protobuf/protoc-gen-gofast
 
+
 RUN go get -u github.com/srikrsna/protoc-gen-gotag
+
