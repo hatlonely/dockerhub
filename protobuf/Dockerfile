@@ -30,12 +30,4 @@ RUN go get -u -v \
     google.golang.org/grpc/cmd/protoc-gen-go-grpc \
     github.com/gogo/protobuf/protoc-gen-gofast
 
-#RUN go get -u -v \
-#    github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway \
-#    github.com/grpc-ecosystem/grpc-gateway/protoc-gen-openapiv2 \
-#    github.com/golang/protobuf/protoc-gen-go \
-#    github.com/grpc/grpc-go/cmd/protoc-gen-go-grpc \
-#    github.com/gogo/protobuf/protoc-gen-gofast
-
-
 RUN go get -u github.com/srikrsna/protoc-gen-gotag
