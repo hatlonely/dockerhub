@@ -24,13 +24,10 @@ ENV GOPATH="/usr/local/go"
 ENV GOROOT="/go"
 
 # https://github.com/grpc-ecosystem/grpc-gateway
-RUN go get -u -v \
-    github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway \
-    github.com/grpc-ecosystem/grpc-gateway/protoc-gen-openapiv2 \
-    google.golang.org/protobuf/cmd/protoc-gen-go \
-    google.golang.org/grpc/cmd/protoc-gen-go-grpc \
-    github.com/gogo/protobuf/protoc-gen-gofast
-
+RUN go get -u -v google.golang.org/protobuf/cmd/protoc-gen-go
+RUN go get -u -v google.golang.org/grpc/cmd/protoc-gen-go-grpc
+RUN go get -u -v github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
+RUN go get -u -v github.com/grpc-ecosystem/grpc-gateway/protoc-gen-openapiv2
+RUN go get -u -v github.com/gogo/protobuf/protoc-gen-gofast
 
 RUN go get -u github.com/srikrsna/protoc-gen-gotag
-
