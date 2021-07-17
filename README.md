@@ -5,7 +5,7 @@
 ## 制作镜像
 
 ```shell
-ops --variable ~/.ops/your_secret_file.json --env hatlonely -a run --task protobuf
+ops --variable .cfg/dev.yaml --env aliyun -a run --task protobuf
 ```
 
 ~/.ops/your_secret_file.json
