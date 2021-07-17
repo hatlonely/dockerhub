@@ -5,22 +5,17 @@
 ## 制作镜像
 
 ```shell
-ops --variable ~/.ops/your_secret_file.json --env hatlonely -a run --task protobuf
+ops --variable .cfg/dev.yaml --env aliyun -a run --task protobuf
 ```
 
-~/.ops/your_secret_file.json
+.cfg/dev.yaml
 
 ```shell
-{
-    "registry": {
-        "hatlonely": {
-            "server": "registry.cn-beijing.aliyuncs.com",
-            "username": "xx",
-            "password": "xx",
-            "namespace": "xx"
-        }
-    }
-}
+registry:
+  aliyun:
+    '@username': "xx"
+    '@password': "xx"
+    'namespace': "xx"
 ```
 
 ## protobuf
