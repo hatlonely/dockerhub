@@ -3,11 +3,11 @@ name: dockerhub
 dep:
 
 env:
-  hatlonely:
-    REGISTRY_SERVER: "registry.cn-shanghai.aliyuncs.com"
-    REGISTRY_USERNAME: "{{.registry.aliyun.hatlonely.username}}"
-    REGISTRY_PASSWORD: "{{.registry.aliyun.hatlonely.password}}"
-    REGISTRY_NAMESPACE: "{{.registry.aliyun.hatlonely.namespace}}"
+  aliyun:
+    REGISTRY_SERVER: "registry.cn-beijing.aliyuncs.com"
+    REGISTRY_USERNAME: "{{.registry.aliyun.username}}"
+    REGISTRY_PASSWORD: "{{.registry.aliyun.password}}"
+    REGISTRY_NAMESPACE: "{{.registry.aliyun.namespace}}"
 
 task:
   protobuf:
