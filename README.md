@@ -48,8 +48,4 @@ codegen: api/api.proto
 	docker stop protobuf
 ```
 
-## imagemagick
-
-图片处理镜像
-
 
