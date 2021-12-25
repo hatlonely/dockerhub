@@ -15,7 +15,16 @@ task:
       IMAGE_REPOSITORY: "protobuf"
       IMAGE_TAG: "1.0.0"
     step:
-      - docker build ${IMAGE_REPOSITORY} --tag=${REGISTRY_NAMESPACE}/${IMAGE_REPOSITORY}:${IMAGE_TAG}
       - docker login --username="${REGISTRY_USERNAME}" --password="${REGISTRY_PASSWORD}" "${REGISTRY_SERVER}"
+      - docker build ${IMAGE_REPOSITORY} --tag=${REGISTRY_NAMESPACE}/${IMAGE_REPOSITORY}:${IMAGE_TAG}
+      - docker tag "${REGISTRY_NAMESPACE}/${IMAGE_REPOSITORY}:${IMAGE_TAG}" "${REGISTRY_SERVER}/${REGISTRY_NAMESPACE}/${IMAGE_REPOSITORY}:${IMAGE_TAG}"
+      - docker push "${REGISTRY_SERVER}/${REGISTRY_NAMESPACE}/${IMAGE_REPOSITORY}:${IMAGE_TAG}"
+  imagemagick:
+    const:
+      IMAGE_REPOSITORY: "imagemagick"
+      IMAGE_TAG: "1.0.0"
+    step:
+      - docker login --username="${REGISTRY_USERNAME}" --password="${REGISTRY_PASSWORD}" "${REGISTRY_SERVER}"
+      - docker build ${IMAGE_REPOSITORY} --tag=${REGISTRY_NAMESPACE}/${IMAGE_REPOSITORY}:${IMAGE_TAG}
       - docker tag "${REGISTRY_NAMESPACE}/${IMAGE_REPOSITORY}:${IMAGE_TAG}" "${REGISTRY_SERVER}/${REGISTRY_NAMESPACE}/${IMAGE_REPOSITORY}:${IMAGE_TAG}"
       - docker push "${REGISTRY_SERVER}/${REGISTRY_NAMESPACE}/${IMAGE_REPOSITORY}:${IMAGE_TAG}"
