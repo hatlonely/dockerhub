@@ -35,3 +35,6 @@ RUN git clone -b v0.6.2 --depth=1 https://github.com/srikrsna/protoc-gen-gotag.g
 RUN git clone -b v0.6.7 --depth=1 https://github.com/envoyproxy/protoc-gen-validate.git && \
     cp -r protoc-gen-validate/validate /usr/local/include && \
     rm -r protoc-gen-validate
+RUN git clone -b common-protos-1_3_1 --depth=1 https://github.com/googleapis/googleapis.git && \
+    cp -r googleapis/google /usr/local/include/ && \
+    rm -r googleapis
