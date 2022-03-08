@@ -9,10 +9,9 @@ RUN yum install -y java
 RUN wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/4.3.1/openapi-generator-cli-4.3.1.jar
 
 ENV PATH="$PATH:/usr/local/go/bin"
-ENV GOPATH="/usr/local/go"
 
-RUN go get -d github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway@v1.16.0
-RUN go get -d github.com/grpc-ecosystem/grpc-gateway/protoc-gen-openapiv2@v1.16.0
+RUN go get -d github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.8.0
+RUN go get -d github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.8.0
 RUN go get -d google.golang.org/protobuf/cmd/protoc-gen-go@v1.27.1
 RUN go get -d google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2.0
 RUN go get -d github.com/gogo/protobuf/protoc-gen-gofast@v1.3.2
