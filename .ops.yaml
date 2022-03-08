@@ -3,6 +3,8 @@ name: dockerhub
 dep:
 
 env:
+  default:
+    IMAGE_TAG: "$(git describe --tags | awk '{print(substr($0,2,length($0)))}'; test ${PIPESTATUS[0]} -eq 0)"
   aliyun:
     REGISTRY_ENDPOINT: "{{ .registry.aliyun.hatlonely.endpoint }}"
     REGISTRY_USERNAME: "{{ .registry.aliyun.hatlonely.username }}"
@@ -18,7 +20,6 @@ task:
   protobuf:
     const:
       IMAGE_REPOSITORY: "protobuf"
-      IMAGE_TAG: "1.0.1"
     step:
       - docker login --username="${REGISTRY_USERNAME}" --password="${REGISTRY_PASSWORD}" "${REGISTRY_ENDPOINT}"
       - docker build ${IMAGE_REPOSITORY} --tag=${REGISTRY_NAMESPACE}/${IMAGE_REPOSITORY}:${IMAGE_TAG}
