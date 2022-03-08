@@ -19,3 +19,19 @@ RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.27.1
 RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2.0
 RUN go install github.com/gogo/protobuf/protoc-gen-gofast@v1.3.2
 RUN go install github.com/envoyproxy/protoc-gen-validate@v0.6.7
+RUN go install github.com/srikrsna/protoc-gen-gotag@v0.6.2
+
+RUN yum install -y git
+RUN git clone -b v2.8.0 --depth=1 https://github.com/grpc-ecosystem/grpc-gateway.git && \
+    mkdir -p /usr/local/include/protoc-gen-openapiv2 && \
+    cp -r grpc-gateway/protoc-gen-openapiv2/options /usr/local/include/protoc-gen-openapiv2/ && \
+    rm -r grpc-gateway
+RUN git clone -b v1.3.2 --depth=1 https://github.com/gogo/protobuf.git && \
+    cp -r protobuf/gogoproto /usr/local/include/ && \
+    rm -r protobuf
+RUN git clone -b v0.6.2 --depth=1 https://github.com/srikrsna/protoc-gen-gotag.git && \
+    cp -r protoc-gen-gotag/tagger /usr/local/include/ && \
+    rm -r protoc-gen-gotag
+RUN git clone -b v0.6.7 --depth=1 https://github.com/envoyproxy/protoc-gen-validate.git && \
+    cp -r protoc-gen-validate/validate /usr/local/include && \
+    rm -r protoc-gen-validate
